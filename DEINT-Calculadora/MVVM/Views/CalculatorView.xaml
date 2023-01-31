@@ -3,32 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DEINT_Calculadora.MVVM.Views.CalculatorView"
              Title="CalculatorView">
-    <Grid RowDefinitions=".4*, .6*" ColumnDefinitions="*">
+    <Grid RowDefinitions=".4*, .6*" ColumnDefinitions="*" Style="{StaticResource gridBackground}">
         <Grid Grid.Row="0" Grid.Column="0" RowDefinitions=".6*, .4*">
-            <Label Grid.Row="0" Grid.Column="0" x:Name="lblOperation" Text="0" FontSize="Large" HorizontalOptions="End" VerticalOptions="Center"/>
-            <Label Grid.Row="1" Grid.Column="0" x:Name="lblResult" Text="0" FontSize="Medium" HorizontalOptions="End" VerticalOptions="Center"/>
+            <Label Grid.Row="0" Grid.Column="0" x:Name="lblOperation" Text="{Binding Formula}" FontSize="Large" HorizontalOptions="End" VerticalOptions="Center" Style="{StaticResource lbl}"/>
+            <Label Grid.Row="1" Grid.Column="0" x:Name="lblResult" Text="{Binding Solution}" FontSize="Medium" HorizontalOptions="End" VerticalOptions="Center" Style="{StaticResource lbl}"/>
         </Grid>
 
-        <Grid Grid.Row="1" Grid.Column="0" RowDefinitions="*, *, *, *, *" ColumnDefinitions="*, *, *, *">
-            <Button Text="AC" Command="{Binding ClickCommand}" CommandParameter="AC" Grid.Row="0" Grid.Column="0"/>
-            <Button Text="⌫" Command="{Binding ClickCommand}" CommandParameter="⌫" Grid.Row="0" Grid.Column="1"/>
-            <Button Text="%" Command="{Binding ClickCommand}" CommandParameter="%" Grid.Row="0" Grid.Column="2"/>
-            <Button Text="/" Command="{Binding ClickCommand}" CommandParameter="/" Grid.Row="0" Grid.Column="3"/>
-            <Button Text="7" Command="{Binding ClickCommand}" CommandParameter="7" Grid.Row="1" Grid.Column="0"/>
-            <Button Text="8" Command="{Binding ClickCommand}" CommandParameter="8" Grid.Row="1" Grid.Column="1"/>
-            <Button Text="9" Command="{Binding ClickCommand}" CommandParameter="9" Grid.Row="1" Grid.Column="2"/>
-            <Button Text="*" Command="{Binding ClickCommand}" CommandParameter="*" Grid.Row="1" Grid.Column="3"/>
-            <Button Text="4" Command="{Binding ClickCommand}" CommandParameter="4" Grid.Row="2" Grid.Column="0"/>
-            <Button Text="5" Command="{Binding ClickCommand}" CommandParameter="5" Grid.Row="2" Grid.Column="1"/>
-            <Button Text="6" Command="{Binding ClickCommand}" CommandParameter="6" Grid.Row="2" Grid.Column="2"/>
-            <Button Text="-" Command="{Binding ClickCommand}" CommandParameter="-" Grid.Row="2" Grid.Column="3"/>
-            <Button Text="1" Command="{Binding ClickCommand}" CommandParameter="1" Grid.Row="3" Grid.Column="0"/>
-            <Button Text="2" Command="{Binding ClickCommand}" CommandParameter="2" Grid.Row="3" Grid.Column="1"/>
-            <Button Text="3" Command="{Binding ClickCommand}" CommandParameter="3" Grid.Row="3" Grid.Column="2"/>
-            <Button Text="+" Command="{Binding ClickCommand}" CommandParameter="+" Grid.Row="3" Grid.Column="3"/>
-            <Button Text="0" Command="{Binding ClickCommand}" CommandParameter="0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/>
-            <Button Text="." Command="{Binding ClickCommand}" CommandParameter="." Grid.Row="4" Grid.Column="2"/>
-            <Button Text="=" Command="{Binding ClickCommand}" CommandParameter="=" Grid.Row="4" Grid.Column="3"/>
+        <BoxView Grid.Row="1" Grid.Column="0" Style="{StaticResource bv}"/>
+
+        <Grid Grid.Row="1" Grid.Column="0" RowDefinitions="*, *, *, *, *" ColumnDefinitions="*, *, *, *" Style="{StaticResource gridBtn}">
+            <Button Text="AC" Command="{Binding ClickCommand}" CommandParameter="AC" Grid.Row="0" Grid.Column="0" Style="{StaticResource btnEspecialColor}"/>
+            <Button Text="⌫" Command="{Binding ClickCommand}" CommandParameter="⌫" Grid.Row="0" Grid.Column="1" Style="{StaticResource btnEspecialColor}"/>
+            <Button Text="%" Command="{Binding ClickCommand}" CommandParameter="%" Grid.Row="0" Grid.Column="2" Style="{StaticResource btnEspecialColor}"/>
+            <Button Text="/" Command="{Binding ClickCommand}" CommandParameter="/" Grid.Row="0" Grid.Column="3" Style="{StaticResource btnOperationColor}"/>
+            <Button Text="7" Command="{Binding ClickCommand}" CommandParameter="7" Grid.Row="1" Grid.Column="0" Style="{StaticResource btnNumColor}"/>
+            <Button Text="8" Command="{Binding ClickCommand}" CommandParameter="8" Grid.Row="1" Grid.Column="1" Style="{StaticResource btnNumColor}"/>
+            <Button Text="9" Command="{Binding ClickCommand}" CommandParameter="9" Grid.Row="1" Grid.Column="2" Style="{StaticResource btnNumColor}"/>
+            <Button Text="*" Command="{Binding ClickCommand}" CommandParameter="*" Grid.Row="1" Grid.Column="3" Style="{StaticResource btnOperationColor}"/>
+            <Button Text="4" Command="{Binding ClickCommand}" CommandParameter="4" Grid.Row="2" Grid.Column="0" Style="{StaticResource btnNumColor}"/>
+            <Button Text="5" Command="{Binding ClickCommand}" CommandParameter="5" Grid.Row="2" Grid.Column="1" Style="{StaticResource btnNumColor}"/>
+            <Button Text="6" Command="{Binding ClickCommand}" CommandParameter="6" Grid.Row="2" Grid.Column="2" Style="{StaticResource btnNumColor}"/>
+            <Button Text="-" Command="{Binding ClickCommand}" CommandParameter="-" Grid.Row="2" Grid.Column="3" Style="{StaticResource btnOperationColor}"/>
+            <Button Text="1" Command="{Binding ClickCommand}" CommandParameter="1" Grid.Row="3" Grid.Column="0" Style="{StaticResource btnNumColor}"/>
+            <Button Text="2" Command="{Binding ClickCommand}" CommandParameter="2" Grid.Row="3" Grid.Column="1" Style="{StaticResource btnNumColor}"/>
+            <Button Text="3" Command="{Binding ClickCommand}" CommandParameter="3" Grid.Row="3" Grid.Column="2" Style="{StaticResource btnNumColor}"/>
+            <Button Text="+" Command="{Binding ClickCommand}" CommandParameter="+" Grid.Row="3" Grid.Column="3" Style="{StaticResource btnOperationColor}"/>
+            <Button Text="0" Command="{Binding ClickCommand}" CommandParameter="0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource btnNumColor}"/>
+            <Button Text="," Command="{Binding ClickCommand}" CommandParameter="," Grid.Row="4" Grid.Column="2" Style="{StaticResource btnNumColor}"/>
+            <Button Text="=" Command="{Binding ClickCommand}" CommandParameter="=" Grid.Row="4" Grid.Column="3" Style="{StaticResource btnOperationColor}"/>
         </Grid>
     </Grid>
 </ContentPage>

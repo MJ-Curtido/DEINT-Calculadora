@@ -49,15 +49,24 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="MVVM\Models\" />
+	  <AndroidResource Remove="MVVM\Models\**" />
+	  <Compile Remove="MVVM\Models\**" />
+	  <EmbeddedResource Remove="MVVM\Models\**" />
+	  <MauiCss Remove="MVVM\Models\**" />
+	  <MauiXaml Remove="MVVM\Models\**" />
+	  <None Remove="MVVM\Models\**" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="Dangl.Calculator" Version="2.0.0" />
 	  <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="MVVM\Views\CalculatorView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Styles\CalculatorDictionary.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

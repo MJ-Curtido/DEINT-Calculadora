@@ -1,4 +1,5 @@
-﻿using PropertyChanged;
+﻿using Dangl.Calculator;
+using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,31 +14,36 @@ namespace DEINT_Calculadora.MVVM.ViewModels
     public class CalculatorViewModel
     {
         public ICommand ClickCommand { get; set; }
-        public String Formula { get; set; }
-        public String Solucion { get; set; }
+        public String Formula { get; set; } = "0";
+        public String Solution { get; set; } = "0";
 
         public CalculatorViewModel()
         {
-            ClickCommand = new Command(async (pulsado) =>
+            ClickCommand = new Command(async (pressed) =>
             {
-                if (pulsado.Equals("="))
+                if (pressed.Equals("="))
                 {
+                    var calculation = Calculator.Calculate(Formula);
 
+                    Solution = calculation.Result.ToString();
                 } else
                 {
-                    if (pulsado.Equals("⌫"))
+                    if (pressed.Equals("⌫"))
                     {
-
+                        if (Formula.Length > 0)
+                        {
+                            Formula = Formula.Substring(0, Formula.Length - 1);
+                        }
                     } else
                     {
-                        if (pulsado.Equals("AC"))
+                        if (pressed.Equals("AC"))
                         {
-                            Formula = "";
-                            Solucion = "";
+                            Formula = "0";
+                            Solution = "0";
                         }
                         else
                         {
-                            Formula += pulsado;
+                            Formula += pressed;
                         }
                     }
                 }

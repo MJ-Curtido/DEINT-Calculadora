@@ -4,6 +4,17 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
+    <Color x:Key="LightBtn">#f7f7f7</Color>
+    <Color x:Key="DarkBtn">#272b33</Color>
+    <Color x:Key="RedBtn">#c75f5a</Color>
+    <Color x:Key="OrangeBtn">#e8a43f</Color>
+    <Color x:Key="LightBV">#f2f2f2</Color>
+    <Color x:Key="DarkBV">#292d36</Color>
+    <Color x:Key="DarkGrid">#22252d</Color>
+    <Color x:Key="LightGrid">White</Color>
+    <Color x:Key="LightLbl">#555a60</Color>
+    <Color x:Key="DarkLbl">#e3e9ec</Color>
+    
     <Color x:Key="Primary">#512BD4</Color>
     <Color x:Key="Secondary">#DFD8F7</Color>
     <Color x:Key="Tertiary">#2B0B98</Color>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Style TargetType="Button" x:Key="btn">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightBtn}, Dark={StaticResource DarkBtn}}"/>
+    </Style>
+    
+    <Style TargetType="Button" x:Key="btnOperationColor" BasedOn="{StaticResource btn}">
+        <Setter Property="TextColor" Value="{StaticResource RedBtn}"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="btnEspecialColor" BasedOn="{StaticResource btn}">
+        <Setter Property="TextColor" Value="{StaticResource OrangeBtn}"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="btnNumColor" BasedOn="{StaticResource btn}">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightLbl}, Dark={StaticResource DarkLbl}}"/>
+    </Style>
+
+    <Style TargetType="BoxView" x:Key="bv">
+        <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource LightBV}, Dark={StaticResource DarkBV}}"/>
+        <Setter Property="CornerRadius" Value="20, 20, 0, 0"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="lbl">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightLbl}, Dark={StaticResource DarkLbl}}"/>
+    </Style>
+
+    <Style TargetType="Grid" x:Key="gridBtn">
+        <Setter Property="ColumnSpacing" Value="10"/>
+        <Setter Property="RowSpacing" Value="10"/>
+        <Setter Property="Margin" Value="20"/>
+    </Style>
+
+    <Style TargetType="Grid" x:Key="gridBackground">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightGrid}, Dark={StaticResource DarkGrid}}"/>
+    </Style>
+</ResourceDictionary>
