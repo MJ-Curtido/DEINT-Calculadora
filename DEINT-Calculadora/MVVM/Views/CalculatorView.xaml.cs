@@ -10,9 +10,4 @@ public partial class CalculatorView : ContentPage
 
 		BindingContext =  new CalculatorViewModel();
 	}
-
-	private void Button_Clicked(object sender, EventArgs e)
-	{
-
-	}
 }
